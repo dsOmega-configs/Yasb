@@ -6,7 +6,7 @@ debug: false # Enable debug mode to see more logs
 # If you don't use komorebi, you can remove this section.
 komorebi:
   start_command: "komorebic start --ahk"
-  stop_command: "komorebic stop"
+  stop_command: "komorebic stop --ahk"
   reload_command: "komorebic reload-configuration"
   
 # This is the main configuration file for Yet Another Status Bar (YASB)
