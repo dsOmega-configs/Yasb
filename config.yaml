@@ -159,8 +159,9 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
+      # https://docs.python.org/3/library/time.html#time.strftime
       label: "{%a %d, %b %H:%M}"
-      label_alt: "{%A %d %B %Y, %H:%M}"
+      label_alt: "{%Y.%m.%d_%H.%M}"
       #locale: 'en_EN' # Langugae for date, you can set your own, example fr_FR
       timezones: [] #Looking up time zone info from registry
       #timezones: ["America/Montreal"]
