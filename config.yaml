@@ -276,12 +276,17 @@ widgets:
         on_middle: "exec cmd /c ncpa.cpl" # open network settings
         on_right: "exec cmd /c start https://ipinfo.io/{data[ip]} " # open ipinfo in browser
 
+  # For some reason author has changed some fields like temp_c to just temp
+  # with it's own param. Overall, still look at [docs](https://www.weatherapi.com/my/fields.aspx) but check
+  # [yasb docs](https://github.com/amnweb/yasb/wiki/(Widget)-Weather)
+  # or source code too:
+  # https://github.com/amnweb/yasb/blob/f5b7ee4a45cf844d52ed06123ef7249a24780634/src/core/widgets/yasb/weather.py#L460
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
-      label: "<span>{icon}</span> {temp_c}"
-      label_alt: "{location}: Min {min_temp_c}, Max {max_temp_c}, Humidity {humidity}"
-      api_key: '3bf4cf9a7c3f40d6b31174128242807' # Get your free API key from https://www.weatherapi.com/
+      label: "<span>{icon}</span> {feelslike}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      # TODO: Add from vault.
       update_interval: 600 # Update interval in seconds, Min 600 seconds
       hide_decimal: true
       location: 'Moscow' # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
