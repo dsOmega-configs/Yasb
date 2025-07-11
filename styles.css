@@ -45,7 +45,7 @@
 }
 .active-window-widget {
 	border-radius: 18px;
-	margin-left: 8px
+	margin-left: 8px;
 }
 .container-left,
 .container-center,
@@ -59,6 +59,17 @@
 	border-bottom-left-radius: 18px;
 }
 
+.ip-info-widget {
+	margin-left: 8px;
+	border-radius: 18px;
+	padding: 0 12px;
+}
+.ip-info-widget .icon {
+	/* Centering it a little bit. */
+	padding-bottom: 2px;
+
+	margin-right: 8px;
+}
 
 .komorebi-active-layout {
 	border-top-right-radius: 18px;
@@ -68,7 +79,7 @@
 
 .komorebi-active-layout .label {
 	font-weight: 600;
-	padding: 2px 0 0 0;
+	padding: 2px 8px;
 }
 .wifi-widget {
 	padding: 0 4px 0 4px;
@@ -120,6 +131,7 @@
 	font-weight: 600;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .power-menu-widget .label {
 	color: #f38ba8;
 	font-size: 13px;
