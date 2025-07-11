@@ -82,7 +82,7 @@
 	padding: 2px 8px;
 }
 .wifi-widget {
-	padding: 0 4px 0 4px;
+	padding: 0 0px 0 6px;
 	border-top-left-radius: 18px;
 	border-bottom-left-radius: 18px;
 }
@@ -200,7 +200,7 @@
 }
 .wifi-widget .icon {
 	color: #43d8d8;
-	padding: 0 7px;
+	padding: 0 10px 0 4px;
 	margin: 0;
 }
 
@@ -245,6 +245,20 @@
 */
 
 /* WEATHER WIDGET */
+.weather-widget {
+	padding-left: 16px;
+	/* We have strange border between wifi and weather widgets only on central
+	* monitor.
+	*
+	* I tried these selectors but it didn't work out
+	* `.wifi-widget + .weather-widget`
+	* `.wifi-widget ~ .weather-widget`
+	* Seems like they're far in the tree and we have to dig it through like
+	* `.widget .wifi-widget + .widget .weather-widget`
+	* but I haven't found a solution.
+	*/
+	border-left: 1px solid transparent;
+}
 .weather-widget .icon {
 	font-size: 16px;
 	margin: 0 2px 1px 0;
