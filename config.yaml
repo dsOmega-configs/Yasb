@@ -50,11 +50,12 @@ bars:
         ]
       right:
         [
-          
+          "obs",
           "media",
           "wifi",
           "weather",
           "volume",
+          "language",
           "power_menu"
         ]
   status-bar-portrait:
@@ -418,3 +419,44 @@ widgets:
       class_name: "system-widget"
       callbacks:
         on_left: "exec start_menu"
+
+  obs:
+    type: "yasb.obs.ObsWidget"
+    options:  
+      connection:
+        host: "192.168.1.5"
+        port: 4455
+        password: "123456"
+      icons:
+        recording: "\ueba7"
+        stopped: "\ueba5"
+        paused: "\ueba7"
+      hide_when_not_recording: true
+      blinking_icon: true
+
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "{lang[iso_language_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 5
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      language_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: true
+        layout_icon: "\uf11c"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
