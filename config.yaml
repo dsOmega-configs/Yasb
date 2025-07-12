@@ -130,6 +130,8 @@ widgets:
       thumbnail_alpha: 80
       thumbnail_padding: 8
       thumbnail_corner_radius: 16 # Set to 0 for square corners
+      scrolling_label:
+        enabled: true
       icons:
         prev_track: "\ue892"
         next_track: "\ue893"
@@ -212,10 +214,20 @@ widgets:
         label_offline: "Komorebi Offline"
         label_workspace_btn: "\udb81\udc3d"
         label_workspace_active_btn: "\udb81\udc3e"
+        # Cool icon but I think just number or app_icons are more effective.
+        # label_workspace_populated_btn: "\udb81\udc3e"
         label_default_name: "{index}"
         label_zero_index: false
         hide_empty_workspaces: false
         hide_if_offline: false
+        app_icons: 
+          enabled_populated: true
+          enabled_active: false
+          size: 12
+          max_icons: 0
+          hide_label: false
+          hide_duplicates: true
+          hide_floating: false
 
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
