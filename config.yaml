@@ -54,6 +54,7 @@ bars:
           "media",
           "wifi",
           "weather",
+          "microphone",
           "volume",
           "language",
           "power_menu"
@@ -138,6 +139,27 @@ widgets:
         next_track: "\ue893"
         play: "\ue768"
         pause: "\ue769"
+
+  microphone:
+    type: "yasb.microphone.MicrophoneWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {level}"
+      mute_text: "mute"
+      icons:
+        normal: "\uf130"
+        muted: "\uf131"
+      mic_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_mic_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_mute"
 
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
